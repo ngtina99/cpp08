@@ -1,4 +1,4 @@
-NAME = whatever
+NAME = ex02
 
 SRC_DIR = ./src/
 SRC = main.cpp

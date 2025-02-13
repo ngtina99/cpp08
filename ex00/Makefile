@@ -1,4 +1,5 @@
-NAME = easyfind
+NAME = ex00
+
 SRC_DIR = ./src/
 SRC = main.cpp
 OBJ = $(addprefix $(SRC_DIR), $(SRC:.cpp=.o))
