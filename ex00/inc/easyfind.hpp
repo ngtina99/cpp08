@@ -6,7 +6,7 @@
 /*   By: ngtina1999 <ngtina1999@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 17:38:26 by ngtina1999        #+#    #+#             */
-/*   Updated: 2025/02/13 01:06:35 by ngtina1999       ###   ########.fr       */
+/*   Updated: 2025/02/13 01:54:54 by ngtina1999       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,11 @@ template <typename T>
 typename T::iterator	easyfind( T &containerOfIntergers, int intVar );
 
 
-class valueNotFounf: public std::exception {
+class valueNotFound: public std::exception {
 	
 	public:
 		const char	*what() const throw() {
-			return(MYRED"Error: Value is not found"MYEOF);
-		}
-}
-
-	public:
-		virtual const char	*what() const throw()
-		{
-			return ("\033[1;31mError: Not found\033[0m");
+			return ("\033[1;31mError: Value is not found\033[0m");
 		}
 };
 
