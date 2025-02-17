@@ -1,4 +1,4 @@
-NAME = ex00
+NAME = easyfind
 
 SRC_DIR = ./src/
 SRC = main.cpp
@@ -6,16 +6,16 @@ OBJ = $(addprefix $(SRC_DIR), $(SRC:.cpp=.o))
 
 INC_DIR = ./inc/
 MAIN_INC = -I $(INC_DIR)
-HEADER = ./inc/easyfind.hpp ./inc/easyfind.tpp
+INCS = $(shell find $(INC_DIR) -type f \( -name "*.hpp" -o -name "*.tpp" \))
 
 CC = c++
 RM = rm -f
 
-CPPFLAFGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HEADER)
+$(NAME): $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) $(MAIN_INC) -o $(NAME)
 
 $(SRC_DIR)%.o: $(SRC_DIR)%.cpp $(INCS)

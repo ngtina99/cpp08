@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngtina1999 <ngtina1999@student.42.fr>      +#+  +:+       +#+        */
+/*   By: thuy-ngu <thuy-ngu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 17:38:26 by ngtina1999        #+#    #+#             */
-/*   Updated: 2025/02/17 00:04:39 by ngtina1999       ###   ########.fr       */
+/*   Updated: 2025/02/17 21:24:37 by thuy-ngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,9 @@
 #include <algorithm>
 #include <iterator>
 #include <exception>
-#include <array>
 #include <vector>
 #include <list>
 #include <queue>
-#include <forward_list>
 
 template <typename T>
 typename T::iterator	easyfind( T &contVar, int intVar );
