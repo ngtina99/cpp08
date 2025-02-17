@@ -6,16 +6,16 @@ OBJ = $(addprefix $(SRC_DIR), $(SRC:.cpp=.o))
 
 INC_DIR = ./inc/
 MAIN_INC = -I $(INC_DIR)
-INCS = $(shell find $(INC_DIR) -type f -name "*.hpp")
+HEADER = ./inc/easyfind.hpp ./inc/easyfind.tpp
 
 CC = c++
 RM = rm -f
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAFGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HEADER)
 	$(CC) $(CPPFLAGS) $(OBJ) $(MAIN_INC) -o $(NAME)
 
 $(SRC_DIR)%.o: $(SRC_DIR)%.cpp $(INCS)

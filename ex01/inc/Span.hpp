@@ -6,7 +6,7 @@
 /*   By: ngtina1999 <ngtina1999@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 01:58:36 by ngtina1999        #+#    #+#             */
-/*   Updated: 2025/02/13 02:33:07 by ngtina1999       ###   ########.fr       */
+/*   Updated: 2025/02/17 00:04:43 by ngtina1999       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 
 // Develop a Span class that can store a maximum of N integers. N is an unsigned int
 // variable and will be the only parameter passed to the constructor
+
+#define MYEOF "\033[0m"
+#define MYRED "\033[1;31m"
+#define MYBLUE "\033[1;34m"
+#define MYGREEN "\033[1;32m"
+#define MYPURPLE "\033[1;35m"
 
 class Span {
 
