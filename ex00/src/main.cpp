@@ -6,7 +6,7 @@
 /*   By: thuy-ngu <thuy-ngu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 17:37:03 by ngtina1999        #+#    #+#             */
-/*   Updated: 2025/02/17 22:38:21 by thuy-ngu         ###   ########.fr       */
+/*   Updated: 2025/02/17 22:42:45 by thuy-ngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int main()
 	std::cout << "Try to find 800 in container type DEQUE..." << std::endl;
 	std::deque<int>::iterator result6 = easyfind(deq, 800);
 	std::cout << MYGREEN "Found: " << *result6 << MYEOF << std::endl;
-	
+
 	// std::cout << "rest of the double-ended queue: ";
 	// while(result6 != deq.end()) {
 	// 	std::cout << *result6 << " ";	
