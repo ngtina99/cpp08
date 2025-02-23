@@ -6,7 +6,7 @@
 /*   By: ngtina1999 <ngtina1999@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 02:41:44 by ngtina1999        #+#    #+#             */
-/*   Updated: 2025/02/23 19:26:14 by ngtina1999       ###   ########.fr       */
+/*   Updated: 2025/02/23 21:04:15 by ngtina1999       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,37 @@ Span&	Span::operator=(Span &rhs) {
 }
 
 void	Span::addNumber(int num) {
-	if(this->_container.size() > this->_maxSize)
+
+	if(this->_container.size() >= this->_maxSize) {
 		throw(noSpaceException());
+		std::cout << "HERE " << std::endl;
+	}
 	else
 		this->_container.push_back(num);
 }
 
-// unsigned int	Span::shortestSpan() {
+unsigned int	Span::shortestSpan() {
 
-// 	if (this->_container.size() < 2)
-// 		throw(noSpaceException());
-// 	int	i;
-// 	int	j;	
-// 	while ()
+	if (this->_container.size() <= 2)
+		throw(noSpanException());
 
-// 	if ( < )
-// }
+	std::vector<int> copy = (this->_container);
+	std::sort(copy.begin(), copy.end());
+
+	int diff1 = copy[1] - copy[0];
+	for (size_t i = 1; i < copy.size(); i++) {
+		int diff2 = copy[i] - copy[i - 1];
+		if(diff2 < diff1) {
+			diff1 = diff2;
+		}
+	}
+	return (diff1);
+}
 
 unsigned int	Span::longestSpan() {
 
-	if (this->_container.size() < 2)
-		throw(noSpaceException());
+	if (this->_container.size() <= 2)
+		throw(noSpanException());
 	
 	//auto result = std::minmax_element(_container.begin(), _container.end());
 	std::vector<int>::iterator resultMax = std::max_element(_container.begin(), _container.end());
@@ -62,10 +72,24 @@ unsigned int	Span::longestSpan() {
 	return(*resultMax - *resultMin);
 }
 		
-const char * Span::noSpanException::what() throw(){
+const char * Span::noSpanException::what() const throw(){
 	return (MYRED "Error: there is no span founded" MYEOF);
 }
 
-const char * Span::noSpaceException::what() throw(){
+const char * Span::noSpaceException::what() const throw(){
 	return (MYRED "Error: there is no more space in the container" MYEOF);
+}
+
+long	Span::getValue(size_t i) {
+	return(this->_container[i]);
+}
+
+void	Span::improvedAddNumber(int *arr, size_t size) {
+
+	std::vector<int> values;
+	values.assign(arr, arr + size);
+	if(this->_container.size() + std::distance(values.begin(), values.end()) > this->_maxSize)
+		throw (noSpaceException());
+	this->_container.insert(this->_container.end(), values.begin(), values.end());
+
 }
