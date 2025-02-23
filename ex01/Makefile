@@ -6,12 +6,12 @@ OBJ = $(addprefix $(SRC_DIR), $(SRC:.cpp=.o))
 
 INC_DIR = ./inc/
 MAIN_INC = -I $(INC_DIR)
-HEADER = ./inc/Span.hpp ./inc/Span.tpp
+HEADER = ./inc/Span.hpp
 
 CC = c++
 RM = rm -f
 
-CPPFLAFGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
