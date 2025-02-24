@@ -1,4 +1,4 @@
-NAME = easyfind
+NAME = ex00
 
 SRC_DIR = ./src/
 SRC = main.cpp

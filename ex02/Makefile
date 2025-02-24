@@ -11,7 +11,7 @@ HEADER = ./inc/MutanStack.hpp ./inc/MutanStack.tpp
 CC = c++
 RM = rm -f
 
-CPPFLAFGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 

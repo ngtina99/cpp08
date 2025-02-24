@@ -6,32 +6,41 @@
 /*   By: ngtina1999 <ngtina1999@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 02:34:52 by ngtina1999        #+#    #+#             */
-/*   Updated: 2025/02/13 02:37:46 by ngtina1999       ###   ########.fr       */
+/*   Updated: 2025/02/23 21:10:38 by ngtina1999       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <MutanStack.hpp>
 int main()
 {
-MutantStack<int> mstack;
-mstack.push(5);
-mstack.push(17);
-std::cout << mstack.top() << std::endl;
-mstack.pop();
-std::cout << mstack.size() << std::endl;
-mstack.push(3);
-mstack.push(5);
-mstack.push(737);
-//[...]
-mstack.push(0);
-MutantStack<int>::iterator it = mstack.begin();
-MutantStack<int>::iterator ite = mstack.end();
-++it;
---it;
-while (it != ite)
-{
-std::cout << *it << std::endl;
-++it;
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+
+	++it;
+	--it;
+
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+
+	std::stack<int> s(mstack);
+
+	return 0;
 }
-std::stack<int> s(mstack);
-return 0;
-}
+// If you run it a first time with your MutantStack, and a second time replacing the
+// MutantStack with, for example, a std::list, the two outputs should be the same.
+// Of course, when testing another container, update the code below with the corresponding
+// member functions (push() can become push_back()).
