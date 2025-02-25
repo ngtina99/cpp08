@@ -21,6 +21,7 @@
 
 #include <stack>
 #include <iostream>
+#include <list>
 
 template <class T>
 //public std::stack<T>

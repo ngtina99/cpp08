@@ -24,15 +24,17 @@ MutantStack<T>::~MutantStack () {
 }
 
 template <class T>
-MutantStack<T>::MutantStack(const MutantStack<T> &copy) {
-	*this = copy;
+MutantStack<T>::MutantStack(const MutantStack<T> &copy) : std::stack<T>(copy){
 }
 
 template <class T>
 MutantStack<T>&	MutantStack<T>::operator=(const MutantStack<T> &rhs) {
 
-	if (this != &rhs)
-		*this = rhs;
+	// if (this != &rhs)
+	// 	*this = rhs;
+	if (this != &rhs) {
+		std::stack<T>::operaotr=(rhs);
+	}
 	return(*this);
 
 }
