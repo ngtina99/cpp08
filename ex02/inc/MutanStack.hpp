@@ -34,14 +34,26 @@ class MutantStack : public std::stack<T> {
 		MutantStack(MutantStack const &copy);
 		MutantStack &operator=(MutantStack const &rhs);
 
-		typedef	typename std::stack<T>::container_type		Container;
-		typedef typename Container::iterator				iterator;
+		typedef	typename std::stack<T>::container_type		container;
+
+		typedef typename container::iterator					iterator;
+		typedef typename container::const_iterator				const_iterator;
+		typedef typename container::reverse_iterator			reverse_iterator;
+		typedef typename container::const_reverse_iterator		const_reverse_iterator;
 
 		iterator	begin();
 		iterator	end();
-				
-};
 
+		const_iterator	begin() const;
+		const_iterator	end() const;
+
+		reverse_iterator	rbegin();
+		reverse_iterator	rend();
+
+		reverse_iterator	rbegin() const;
+		reverse_iterator	rend() const;
+
+};
 #include <MutanStack.tpp>
 
 #endif
