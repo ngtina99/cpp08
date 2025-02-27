@@ -6,7 +6,7 @@
 /*   By: ngtina1999 <ngtina1999@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 02:34:52 by ngtina1999        #+#    #+#             */
-/*   Updated: 2025/02/27 00:56:07 by ngtina1999       ###   ########.fr       */
+/*   Updated: 2025/02/27 01:19:15 by ngtina1999       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,9 +108,13 @@ int	main()
 	}
 	std::cout << std::endl;
 
-	MutantStack<int>::iterator itSearch = std::find(mstack.begin(), mstack.end(), 737);
+	MutantStack<int>::reverse_iterator itSearch = std::find(mstack.rbegin(), mstack.rend(), 737);
 	if (*itSearch == 737)
-		std::cout << "Found" << std::endl;
+		std::cout << "Found value:" << *itSearch << std::endl;
+
+	int position = std::distance(mstack.rbegin(), itSearch);
+
+	std::cout << "The position of 737 is: " << position << std::endl;
 
 	return (0);
 
