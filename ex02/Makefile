@@ -18,7 +18,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(HEADER)
 	$(CC) $(CPPFLAGS) $(OBJ) $(MAIN_INC) -o $(NAME)
 
-$(SRC_DIR)%.o: $(SRC_DIR)%.cpp $(INCS)
+$(SRC_DIR)%.o: $(SRC_DIR)%.cpp $(HEADER)
 	$(CC) $(CPPFLAGS) $(MAIN_INC) -c $< -o $@
 
 clean:
