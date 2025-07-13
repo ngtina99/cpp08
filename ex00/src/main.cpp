@@ -28,7 +28,7 @@ int main()
 		deq.push_back(i * 100);
 
 	std::cout << "Try to find 5 in container type VECTOR..." << std::endl;
-	std::vector<int>::iterator result1 = easyfind(vec, 5);
+	std::vector<int>::iterator result1 = easyFind(vec, 5);
 	std::cout << MYGREEN "Found: " << *result1 << MYEOF << std::endl;
 	
 	// std::cout << "rest of the vector: ";
@@ -40,7 +40,7 @@ int main()
 
 	try {
 		std::cout << "Try to find 50 in container type VECTOR..." << std::endl;
-		std::vector<int>::iterator result2 = easyfind(vec, 50);
+		std::vector<int>::iterator result2 = easyFind(vec, 50);
 		std::cout << MYGREEN << "Found: " << *result2 << MYEOF <<std::endl;
 	}
 	catch(const std::exception& e) {
@@ -48,7 +48,7 @@ int main()
 	}
 	
 	std::cout << "Try to find 60 in container type LIST..." << std::endl;
-	std::list<int>::iterator result3 = easyfind(lst, 60);
+	std::list<int>::iterator result3 = easyFind(lst, 60);
 	std::cout << MYGREEN "Found: " << *result3 << MYEOF << std::endl;
 	
 	// std::cout << "rest of the list: ";
@@ -60,7 +60,7 @@ int main()
 
 	try {
 		std::cout << "Try to find 8 in container type LIST..." << std::endl;
-		std::list<int>::iterator result5 = easyfind(lst, 8);
+		std::list<int>::iterator result5 = easyFind(lst, 8);
 		std::cout << MYGREEN << "Found: " << *result5 << MYEOF <<std::endl;
 	}
 	catch(const std::exception& e) {
@@ -68,7 +68,7 @@ int main()
 	}
 
 	std::cout << "Try to find 800 in container type DEQUE..." << std::endl;
-	std::deque<int>::iterator result6 = easyfind(deq, 800);
+	std::deque<int>::iterator result6 = easyFind(deq, 800);
 	std::cout << MYGREEN "Found: " << *result6 << MYEOF << std::endl;
 
 	// std::cout << "rest of the double-ended queue: ";
@@ -80,7 +80,7 @@ int main()
 
 	try {
 		std::cout << "Try to find 6 in container type DEQUE..." << std::endl;
-		std::list<int>::iterator result4 = easyfind(lst, 6);
+		std::list<int>::iterator result4 = easyFind(lst, 6);
 		std::cout << MYGREEN << "Found: " << *result4 << MYEOF <<std::endl;
 	}
 	catch(const std::exception& e) {

@@ -16,7 +16,7 @@
 #include <easyfind.hpp>
 
 template <typename T>
-typename T::iterator	easyfind( T &contVar, int intVar ) {
+typename T::iterator	easyFind( T &contVar, int intVar ) {
 	
 	typename T::iterator	valueIter;
 	valueIter = std::find(contVar.begin(), contVar.end(), intVar);

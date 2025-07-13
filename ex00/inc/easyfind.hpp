@@ -28,7 +28,7 @@
 #include <queue>
 
 template <typename T>
-typename T::iterator	easyfind( T &contVar, int intVar );
+typename T::iterator	easyFind( T &contVar, int intVar );
 
 class valueNotFound: public std::exception {
 	
