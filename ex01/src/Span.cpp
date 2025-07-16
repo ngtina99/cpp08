@@ -25,7 +25,7 @@ Span::~Span() {
 Span::Span(const Span &copy) : _maxSize(copy._maxSize), _container(copy._container) {
 }
 
-Span&	Span::operator=(Span &rhs) {
+Span&	Span::operator=(Span const &rhs) {
 	if (this != &rhs) {
 		this->_maxSize = rhs._maxSize;
 		this->_container = rhs._container;
@@ -35,17 +35,15 @@ Span&	Span::operator=(Span &rhs) {
 
 void	Span::addNumber(int num) {
 
-	if(this->_container.size() >= this->_maxSize) {
+	if(this->_container.size() >= this->_maxSize)
 		throw(noSpaceException());
-		std::cout << "HERE " << std::endl;
-	}
 	else
 		this->_container.push_back(num);
 }
 
 unsigned int	Span::shortestSpan() {
 
-	if (this->_container.size() <= 2)
+	if (this->_container.size() < 2)
 		throw(noSpanException());
 
 	std::vector<int> copy = (this->_container);
@@ -63,10 +61,9 @@ unsigned int	Span::shortestSpan() {
 
 unsigned int	Span::longestSpan() {
 
-	if (this->_container.size() <= 2)
+	if (this->_container.size() < 2)
 		throw(noSpanException());
 	
-	//auto result = std::minmax_element(_container.begin(), _container.end());
 	std::vector<int>::iterator resultMax = std::max_element(_container.begin(), _container.end());
 	std::vector<int>::iterator resultMin = std::min_element(_container.begin(), _container.end());
 	return(*resultMax - *resultMin);
@@ -86,10 +83,7 @@ long	Span::getValue(size_t i) {
 
 void	Span::improvedAddNumber(int *arr, size_t size) {
 
-	std::vector<int> values;
-	values.assign(arr, arr + size);
-	if(this->_container.size() + std::distance(values.begin(), values.end()) > this->_maxSize)
-		throw (noSpaceException());
-	this->_container.insert(this->_container.end(), values.begin(), values.end());
-
+	if (this->_container.size() + size > this->_maxSize)
+    	throw(noSpaceException());
+	this->_container.insert(this->_container.end(), arr, arr + size);
 }

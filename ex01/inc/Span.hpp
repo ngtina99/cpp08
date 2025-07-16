@@ -39,7 +39,7 @@ class Span {
 		Span();
 		~Span();
 		Span(unsigned int integerValue);
-		Span	&operator=(Span &rhs);
+		Span	&operator=(Span const &rhs);
 		Span(const Span &copy);
 	
 		void	addNumber(int num);

@@ -19,14 +19,12 @@ template <typename T>
 typename T::iterator	easyFind( T &contVar, int intVar ) {
 	
 	typename T::iterator	valueIter;
+
 	valueIter = std::find(contVar.begin(), contVar.end(), intVar);
-	if (!(std::binary_search(contVar.begin(), contVar.end(), intVar)))
-		throw(valueNotFound());
+	if (valueIter == contVar.end())
+    	throw(valueNotFound());
 	return(valueIter);
 }
-// Returns int Instead of an Iterator
-// You only get the integer back, not its position in the container.
-// If the container has duplicate elements, you can’t tell which one was found.
 
 const char * valueNotFound::what() const throw () {
 	return ("\033[1;31mError: Value is not found\033[0m");

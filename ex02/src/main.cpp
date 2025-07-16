@@ -31,7 +31,7 @@ int	main()
 	else
 		std::cout << MYBLUE "Stack is not empty!\n" MYEOF;
 
-	//**make a list for comparison */
+	//list for comparison
 	std::list<int> mlist;
 
 	mlist.push_back(5);
@@ -43,7 +43,7 @@ int	main()
 	else
 		std::cout << MYRED "ERROR" MYEOF << std::endl;
 
-	//remove last element
+	//removing last element
 	mlist.pop_back();
 	mstack.pop();
 
@@ -55,7 +55,6 @@ int	main()
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	//[...]
 	mstack.push(0);
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
@@ -78,7 +77,7 @@ int	main()
 	else
 		std::cout << "Copy assignment FAILED!\n";
 
-	/* push the rest to compare with MutantStack */
+	//push the rest to compare with MutantStack
 
 	mlist.push_back(3);
 	mlist.push_back(5);
@@ -109,7 +108,7 @@ int	main()
 	std::cout << std::endl;
 
 	MutantStack<int>::reverse_iterator itSearch = std::find(mstack.rbegin(), mstack.rend(), 737);
-	if (*itSearch == 737)
+	if (itSearch != mstack.rend() && *itSearch == 737)
 		std::cout << "Found value:" << *itSearch << std::endl;
 
 	int position = std::distance(mstack.rbegin(), itSearch);

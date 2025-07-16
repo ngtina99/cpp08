@@ -25,7 +25,6 @@
 #include <algorithm>
 
 template <class T>
-//public std::stack<T>
 class MutantStack : public std::stack<T> {
 	
 	public:
@@ -48,13 +47,14 @@ class MutantStack : public std::stack<T> {
 		const_iterator	begin() const;
 		const_iterator	end() const;
 
-		reverse_iterator	rbegin();
-		reverse_iterator	rend();
+		reverse_iterator rbegin();
+		reverse_iterator rend();
 
-		reverse_iterator	rbegin() const;
-		reverse_iterator	rend() const;
+		const_reverse_iterator rbegin() const;
+		const_reverse_iterator rend() const;
 
 };
+
 #include <MutanStack.tpp>
 
 #endif
