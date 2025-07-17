@@ -6,7 +6,7 @@
 /*   By: ngtina1999 <ngtina1999@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 01:58:36 by ngtina1999        #+#    #+#             */
-/*   Updated: 2025/02/23 21:03:53 by ngtina1999       ###   ########.fr       */
+/*   Updated: 2025/07/17 18:16:19 by ngtina1999       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 #include <list>
 #include <queue>
 #include <limits>
+#include <iomanip> //std::setprecision
 
 class Span {
 
