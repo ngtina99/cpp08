@@ -22,9 +22,9 @@ int	main()
 	else
 		std::cout << MYBLUE "Stack is not empty!\n" MYEOF;
 
-
 	mstack.push(5);
 	mstack.push(17);
+
 
 	if (mstack.empty())
 		std::cout << MYBLUE "Stack is empty\n" MYEOF;
@@ -39,7 +39,7 @@ int	main()
 
 	//last element
 	if (mlist.back() == mstack.top())
-		std::cout << MYBLUE "Last elements " << mlist.back() << " are equal" MYEOF << std::endl;
+		std::cout << MYBLUE "Last elements " << "(" << mlist.back() << ")" << " are equal" MYEOF << std::endl;
 	else
 		std::cout << MYRED "ERROR" MYEOF << std::endl;
 
@@ -77,8 +77,7 @@ int	main()
 	else
 		std::cout << "Copy assignment FAILED!\n";
 
-	//push the rest to compare with MutantStack
-
+	//other element to compare with MutantStack
 	mlist.push_back(3);
 	mlist.push_back(5);
 	mlist.push_back(737);
@@ -101,10 +100,16 @@ int	main()
 		return(1);
 	}
 
-	std::cout << "Reverse_iterator test" << std::endl;
-	for (MutantStack<int>::const_reverse_iterator rit = mstack.rbegin(); rit != mstack.rend(); ++rit) {
+	std::cout << "Reverse_iterator test:" << std::endl;
+
+	MutantStack<int>::reverse_iterator rit = mstack.rbegin();
+	MutantStack<int>::reverse_iterator rite = mstack.rend();
+
+	while (rit != rite) {
 		std::cout << *rit  << " ";
+		rit++;
 	}
+
 	std::cout << std::endl;
 
 	MutantStack<int>::reverse_iterator itSearch = std::find(mstack.rbegin(), mstack.rend(), 737);
@@ -145,8 +150,8 @@ int	main()
 // 	--it;
 // 	while (it != ite)
 // 	{
-// 	std::cout << *it << std::endl;
-// 	++it;
+// 		std::cout << *it << std::endl;
+// 		++it;
 // 	}
 // 	std::stack<int> s(mstack);
 
