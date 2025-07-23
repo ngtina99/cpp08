@@ -47,7 +47,7 @@ ex02 — Mutated abomination:
 Create a MutantStack class inheriting from std::stack but exposing iterators (begin() / end()). This makes the stack iterable like standard containers.
 
 ## 💼 Connect
-If you have any questions or suggestions, feel free to connect: 🔗 [LinkedIn: Valentina Nguyen](https://www.linkedin.com/in/valentina-nguyen-tina/) 🙋‍♀️
+If you have any questions or suggestions, feel free to connect: 🔗 [LinkedIn: Valentina Nguyen](https://www.linkedin.com/in/valentina-nguyen-t/) 🙋‍♀️
 
 ## 🖥️ System Compatibility
 This project was developed and tested on Linux (Ubuntu).
